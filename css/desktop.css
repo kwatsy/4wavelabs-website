@@ -1,5 +1,229 @@
 /* Desktop-specific styles */
 
+/* Manual Page Styles */
+.manual-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.manual-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 3rem 0;
+    background: var(--color-terminal-black);
+    border-radius: 20px;
+    border: 1px solid var(--color-background-storm);
+}
+
+.manual-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--color-terminal-blue), var(--color-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.manual-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-terminal-white);
+    opacity: 0.8;
+}
+
+.manual-section {
+    margin: 4rem 0;
+    padding: 3rem;
+    background: var(--color-terminal-black);
+    border-radius: 20px;
+    border: 1px solid var(--color-background-storm);
+}
+
+.manual-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--color-green) !important;
+}
+
+.step-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--color-background-storm);
+    border-radius: 15px;
+    border: 1px solid var(--color-terminal-black);
+}
+
+.step-number {
+    background: linear-gradient(135deg, var(--color-terminal-blue), var(--color-purple));
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    color: var(--color-terminal-cyan);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.step-content p {
+    color: var(--color-terminal-white);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.wave-explanation {
+    display: grid;
+    gap: 2rem;
+}
+
+.wave-item {
+    padding: 2rem;
+    background: var(--color-background-storm);
+    border-radius: 15px;
+    border-left: 4px solid var(--color-terminal-blue);
+}
+
+.wave-item h3 {
+    color: var(--color-terminal-cyan);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.wave-item p {
+    color: var(--color-terminal-white);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    padding: 2rem;
+    background: var(--color-background-storm);
+    border-radius: 15px;
+    border: 1px solid var(--color-terminal-black);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(122, 162, 247, 0.3);
+}
+
+.feature-card h3 {
+    color: var(--color-terminal-cyan);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.feature-card p {
+    color: var(--color-terminal-white);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.tips-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.tip {
+    padding: 2rem;
+    background: var(--color-background-storm);
+    border-radius: 15px;
+    border-left: 4px solid var(--color-purple);
+}
+
+.tip h3 {
+    color: var(--color-magenta);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.tip p {
+    color: var(--color-terminal-white);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.faq-container {
+    display: grid;
+    gap: 2rem;
+}
+
+.faq-item {
+    padding: 2rem;
+    background: var(--color-background-storm);
+    border-radius: 15px;
+    border: 1px solid var(--color-terminal-black);
+}
+
+.faq-item h3 {
+    color: var(--color-turquoise);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.faq-item p {
+    color: var(--color-terminal-white);
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.contact-info {
+    padding: 2rem;
+    background: var(--color-background-storm);
+    border-radius: 15px;
+    border: 1px solid var(--color-terminal-black);
+}
+
+.contact-info p {
+    color: var(--color-terminal-white);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    color: var(--color-terminal-white);
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+}
+
+.contact-info a {
+    color: var(--color-terminal-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--color-terminal-cyan);
+}
+
 /* Desktop Card Overrides */
 .feature-card, .project-card {
     padding: 3rem 2rem;
@@ -12,18 +236,10 @@
 /* Section Spacing - Match features section spacing */
 .projects {
     margin: 4rem 0;
-    background: var(--color-terminal-black);
-    padding: 4rem 2rem;
-    border-radius: 20px;
-    border: 1px solid var(--color-background-storm);
 }
 
 .coffee-app {
     margin: 4rem 0;
-    background: var(--color-terminal-black);
-    padding: 4rem 2rem;
-    border-radius: 20px;
-    border: 1px solid var(--color-background-storm);
 }
 
 .technology-overview {
@@ -96,7 +312,7 @@
 }
 
 .coffee-app-header p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--dark-coffee);
     margin-bottom: 2rem;
     max-width: 600px;
@@ -224,6 +440,8 @@
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
+
+
 
 .step-number {
     background-color: var(--coffee-brown);

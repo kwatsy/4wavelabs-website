@@ -416,7 +416,6 @@ main {
     }
 }
 
-/* Flask Bubble Animations - Required for SVG bubbles */
 @keyframes bubble2 {
     0% {
         transform: translateY(0) scale(1);
@@ -471,7 +470,7 @@ main {
     }
 }
 
-/* 4-Wave Color Animations for Flask Bubbles */
+/* 4-Wave Color Animations for Bubbles */
 @keyframes bubbleColor1 {
     0%, 100% { background: #00bcd4; } /* Wave 1: Cyan */
     25% { background: #2196f3; } /* Wave 2: Blue */
@@ -618,8 +617,48 @@ main {
     font-weight: 400;
 }
 
+.footer-brands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
 
-/* Step Number Styling - Simplified */
+.brand-logo {
+    color: var(--color-terminal-cyan);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 188, 212, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 188, 212, 0.2);
+    transition: all 0.3s ease;
+}
+
+.brand-logo:hover {
+    background: rgba(0, 188, 212, 0.2);
+    transform: translateY(-2px);
+}
+
+.footer-copyright {
+    color: var(--color-terminal-blue);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-copyright a {
+    color: var(--color-terminal-cyan);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-copyright a:hover {
+    color: var(--color-white);
+    text-decoration: underline;
+}
+
 .step-number {
     width: 32px;
     height: 32px;
@@ -637,19 +676,136 @@ main {
 .step-number.completed {
     background: linear-gradient(135deg, #4CAF50, #66BB6A);
     color: #1a1a1a;
+    box-shadow: 0 4px 16px rgba(76, 175, 80, 0.6), 0 0 0 2px rgba(76, 175, 80, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .step-number.current {
     background: linear-gradient(135deg, #FF9800, #FFB74D);
     color: #1a1a1a;
+    box-shadow: 0 4px 20px rgba(255, 152, 0, 0.7), 0 0 0 2px rgba(255, 152, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: desktopPulse 2s ease-in-out infinite;
 }
 
 .step-number.pending {
-    background: var(--color-background-storm);
+    background: #fff;
+    color: var(--color-terminal-black);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+@keyframes desktopPulse {
+    0%, 100% { 
+        transform: scale(1); 
+        box-shadow: 0 4px 20px rgba(255, 152, 0, 0.7), 0 0 0 2px rgba(255, 152, 0, 0.3);
+    }
+    50% { 
+        transform: scale(1.15); 
+        box-shadow: 0 8px 32px rgba(255, 152, 0, 1), 0 0 0 4px rgba(255, 152, 0, 0.6), 0 0 20px rgba(255, 152, 0, 0.8);
+    }
+}
+
+/* Progress Bar */
+.progress-bar {
+    background-color: rgba(139, 69, 19, 0.08); /* subtle coffee tint for track */
+    height: 6px;
+    border-radius: 3px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    border: 1px solid rgba(44, 24, 16, 0.15);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #FF9800);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+.progress-text {
+    font-size: 1.1rem;
     color: var(--color-terminal-blue);
-    border: 2px solid var(--color-terminal-blue);
+    font-weight: 500;
+}
+
+/* Feature Lists */
+.feature-list {
+    margin: 1.5rem 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    padding: 0.5rem;
+    background-color: rgba(139, 69, 19, 0.05);
+    border-radius: 8px;
+}
+
+.feature-icon {
+    color: var(--coffee-brown);
+    margin-right: 0.8rem;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.feature-text {
+    color: var(--dark-coffee);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Tech Badges */
+.tech-badges {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.tech-badge, .stat-badge {
+    background-color: rgba(139, 69, 19, 0.1);
+    color: var(--coffee-brown);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(139, 69, 19, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover, .stat-badge:hover {
+    background-color: rgba(139, 69, 19, 0.15);
+    transform: translateY(-2px);
+}
+
+.tech-badge.react {
+    background-color: rgba(97, 218, 251, 0.1);
+    color: #61DAFB;
+    border: 1px solid rgba(97, 218, 251, 0.2);
+}
+
+.tech-badge.node {
+    background-color: rgba(104, 160, 99, 0.1);
+    color: #68A063;
+    border: 1px solid rgba(104, 160, 99, 0.2);
+}
+
+.tech-badge.ai {
+    background-color: rgba(245, 124, 0, 0.1);
+    color: #F57C00;
+    border: 1px solid rgba(245, 124, 0, 0.2);
+}
+
+.tech-stats {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
 }
 
 /* Footer */
@@ -671,7 +827,7 @@ footer {
 }
 
 .footer-social-link {
-    color: var(--dark-coffee);
+    color: var(--color-terminal-blue);
     transition: all 0.3s ease;
     padding: 0.5rem;
     border-radius: 12px;
@@ -681,10 +837,10 @@ footer {
 }
 
 .footer-social-link:hover {
-    color: var(--color-terminal-blue);
-    background: rgba(122, 162, 247, 0.1);
+    color: var(--color-magenta);
+    background: rgba(255, 121, 198, 0.1);
     transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 8px 25px rgba(122, 162, 247, 0.3);
+    box-shadow: 0 8px 25px rgba(255, 121, 198, 0.3);
 }
 
 .footer-social-link svg {
@@ -694,14 +850,14 @@ footer {
 }
 
 .footer-tagline {
-    color: var(--color-terminal-blue);
+    color: var(--color-magenta);
     font-size: 1rem;
     margin-bottom: 0.5rem;
     font-weight: 400;
 }
 
-/* Consolidated Content Text Layout - Omakub Style */
-.content-text {
+/* Text-based App Features Layout - Omakub Style */
+.app-features-text {
     max-width: 800px;
     margin: 2rem auto;
     padding: 0 1rem;
@@ -709,7 +865,7 @@ footer {
     line-height: 1.6;
 }
 
-.content-text h3 {
+.app-features-text h3 {
     color: var(--color-green);
     font-size: 1.4rem;
     font-weight: 600;
@@ -718,18 +874,18 @@ footer {
     letter-spacing: 0.05em;
 }
 
-.content-text h3:first-child {
+.app-features-text h3:first-child {
     margin-top: 0;
 }
 
-.content-text h4 {
+.app-features-text h4 {
     color: var(--dark-coffee);
     font-size: 1.4rem;
     font-weight: 500;
     margin: 1.2rem 0 0.6rem 0;
 }
 
-.content-text p {
+.app-features-text p {
     color: var(--color-terminal-blue);
     font-size: 1.1rem;
     line-height: 1.6;
@@ -737,13 +893,13 @@ footer {
     opacity: 0.9;
 }
 
-.content-text ul {
+.app-features-text ul {
     list-style: none;
     padding: 0;
     margin: 0 0 1.5rem 0;
 }
 
-.content-text li {
+.app-features-text li {
     color: var(--color-terminal-blue);
     font-size: 0.95rem;
     line-height: 1.6;
@@ -752,7 +908,7 @@ footer {
     position: relative;
 }
 
-.content-text li::before {
+.app-features-text li::before {
     content: "•";
     color: var(--color-green);
     font-weight: bold;
@@ -782,17 +938,69 @@ footer {
     box-shadow: none !important;
 }
 
+/* Projects Text Layout - Same as App Features */
+.projects-text {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: left;
+    line-height: 1.6;
+}
 
+.projects-text h3 {
+    color: var(--color-green);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 2rem 0 0.8rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
 
-/* Consolidated Box Removal Utility */
-.no-box-styling,
-.projects,
-.technology-overview,
-.feature-card,
-.project-card,
-.tech-card,
-.tech-cards,
-.features {
+.projects-text h3:first-child {
+    margin-top: 0;
+}
+
+.projects-text h4 {
+    color: var(--dark-coffee);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 1.2rem 0 0.6rem 0;
+}
+
+.projects-text p {
+    color: var(--color-terminal-blue);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.projects-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.projects-text li {
+    color: var(--color-terminal-blue);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.3rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.projects-text li::before {
+    content: "•";
+    color: var(--color-green);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Force remove box styling from projects section */
+.projects {
     background: none !important;
     padding: 0 !important;
     border: none !important;
@@ -800,10 +1008,91 @@ footer {
     box-shadow: none !important;
 }
 
-.feature-card,
-.project-card,
-.tech-card {
+/* Tech Text Layout - Omakub Style */
+.tech-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    font-family: 'Cascadia Mono', monospace;
+}
+
+.tech-text h3 {
+    color: var(--color-green);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 3rem 0 1rem 0;
+    letter-spacing: 0.05em;
+}
+
+.tech-text h3:first-child {
+    margin-top: 0;
+}
+
+.tech-text p {
+    color: var(--dark-coffee);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.tech-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.tech-text li {
+    color: var(--color-terminal-blue);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.3rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.tech-text li::before {
+    content: "•";
+    color: var(--color-green);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Force remove box styling from technology section */
+.technology-overview {
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Universal box removal - applies to ALL devices and orientations */
+.feature-card, .project-card, .tech-card {
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
     margin: 2rem 0 !important;
+}
+
+.tech-cards {
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.features {
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
 
 /* Basic mobile responsiveness - replaces mobile.css */
@@ -834,24 +1123,24 @@ footer {
         font-size: 1rem;
     }
     
-    .content-text {
+    .app-features-text, .projects-text, .tech-text {
         padding: 0 1rem;
         margin: 2rem 0;
     }
     
-    .content-text h3 {
+    .app-features-text h3, .projects-text h3, .tech-text h3 {
         font-size: 1.2rem;
         margin: 2rem 0 1rem 0;
         text-align: center;
     }
     
-    .content-text p {
+    .app-features-text p, .projects-text p, .tech-text p {
         font-size: 0.95rem;
         text-align: center;
         margin-bottom: 1rem;
     }
     
-    .content-text li {
+    .app-features-text li, .projects-text li, .tech-text li {
         font-size: 0.85rem;
     }
     

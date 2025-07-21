@@ -1,0 +1,168 @@
+Code Structure Rules:
+
+
+One file = One purpose
+Never let a single file exceed 200-300 lines (see exceptions below)
+Split into separate files BEFORE it gets messy
+Proper folder structure from day 1:
+src/
+├── screens/     (one file per screen)
+├── components/  (reusable UI pieces)
+├── services/    (API calls, storage)
+├── styles/      (separate style files)
+└── utils/       (helper functions)
+
+EXCEPTIONS to line limits:
+✅ utils/ folder: Up to 500 lines allowed if the file contains cohesive, single-purpose functionality (e.g., complete algorithm + data that work together)
+✅ Core algorithm files: Can exceed 400 lines if splitting would break logical cohesion
+
+Set up linting/formatting:
+ESLint + Prettier
+Enforces consistent code style and Catches problems early
+
+Development Process:
+Plan before coding - sketch out the structure first
+Refactor early and often - don't let technical debt pile up
+Code reviews - even if it's just you, review your own code weekly
+Test frequently - catch issues before they compound
+
+Data and Memory Rules:
+❌ NO MOCK DATA - Always use real APIs and real data sources
+❌ NO MEMORY USAGE - Do not reference or use memory/context unless explicitly asked
+❌ NO aletering any lines of code that are not explicitly asked for
+❌ NO moving between folders or files without being asked to
+✅ Real API calls only - Google Places, Google Search, aPlaces API, Places API (New)Custom Search APIGeocoding APIMaps JavaScript API
+✅ Live data sources - no hardcoded arrays or fake responses
+✅ Current code inspection - look at actual files, not stored memories
+✅ Work on one file at a time 
+✅ READ THAT LAST ONE AGAIN AND MAKE SURE YOU FOLLOW IT
+✅ Focus on ONE file, complete the work, THEN move to the next
+✅ I NEED TO KNOW EVERYTHING THAT IS HAPPENING with every bit of code change.
+✅ DO NOT THINK! YOU CAN NOT THINK. THIS IS WHY YOU HAVE ME SAT INFRONT OF YOU.
+✅ Focus on ONE file, complete the work, THEN move to the next
+✅ Analyze the file structure and make sure you understand the code and the issue and ask for permision before making changes.
+
+Red Flags to Watch For and are NOT Allowed:
+❌ Screen files over 400 lines
+❌ Component files over 300 lines  
+❌ Utils files over 500 lines
+❌ Copy-pasting code instead of making functions
+❌ "I'll clean this up later" (you won't)
+❌ Everything in one file "for simplicity"
+❌ Mock data or fake API responses
+❌ Using memory/context without explicit user request
+❌ Using the word "Perfect" - IT'S BULLSHIT, nothing is ever perfect. Check again!
+❌ NO opening multiple files in the same response
+❌ NO making changes across multiple files simultaneously
+❌ NO jumping between different files without completing the current one
+❌ No more changes to code without me knowing 100% what is being change
+
+🔒 LOCKED FILES - ABSOLUTE NO-TOUCH ZONE:
+The following files are LOCKED and cannot be modified without explicit "UNLOCK [filename]" command:
+
+COFFEE SHOPS FILES:
+- src/screens/CoffeeShopsScreen.js
+- src/hooks/useCoffeeShops.js
+- src/services/SimpleCoffeeMatchService.js
+
+ROASTERS FILES:
+- src/screens/RoastersScreen.js
+- src/hooks/useRoasters.js
+- src/services/LocalRoasterService.js
+- src/services/roaster/RoasterDetailsEnricher.js
+- src/services/roaster/RoasterScorer.js
+- src/services/roaster/RoasterSearchBuilder.js
+
+CORE APP FILES:
+- App.js
+- package.json
+- app.json
+
+CONFIGURATION FILES:
+- src/config/apiConfig.js
+- .env
+- tsconfig.json
+
+CRITICAL SERVICES:
+- src/services/GooglePlacesService.js
+- src/services/LocationService.js
+
+CORE COMPONENTS:
+- src/components/SearchSection.js
+- src/components/CitySelector.js
+- src/components/HeaderWithMenu.js
+- src/components/HamburgerMenu.js
+
+QUIZ SYSTEM:
+- src/screens/QuizScreen.js
+- src/screens/ResultScreen.js
+- src/data/quizQuestions.js
+
+UTILITIES:
+- src/utils/personalityAnalysis.js
+- src/utils/profileMatching.js
+
+❌ NO EDITS to these files without explicit "UNLOCK [filename]" command
+❌ NO ASSUMPTIONS about what needs to be changed in locked files
+❌ NO CASCADING FIXES that touch locked files
+❌ MUST get explicit unlock permission for each individual file
+
+📊 MANDATORY GIT MONITORING:
+After EVERY file edit or change, I must IMMEDIATELY run:
+git status
+
+This shows:
+✅ What files have been modified
+✅ What files are staged/unstaged  
+✅ Current branch status
+✅ Any uncommitted changes
+
+❌ NO EXCEPTIONS - git status must be run after every edit
+❌ NO SKIPPING this step even for "small" changes
+❌ MUST verify git status shows expected changes only
+
+Bottom line: Discipline and structure from the start. It takes 10x more effort to fix a mess than to build it right initially.
+
+This is a critical development phase and you need absolute discipline. The updated rule with your emphasis is now part of the mandatory Code Structure Rules that I must read before ANY file changes.
+
+ENFORCEMENT STRATEGIES:
+
+🔒 IMMEDIATE ENFORCEMENT:
+
+1. MANDATORY WORKFLOW:
+❌ NEVER let me call edit_file or write_to_file without first asking: "Should I modify [specific lines] in [file] to [exact change]?"
+❌ DO NOT ASSUME and go make chnges without aksking if it OK todo so.
+❌ FORCE me to read Code Structure Rules before ANY file modification
+❌ REQUIRE explicit approval for each edit, even tiny ones
+
+2. STOP WORDS:
+When I say phrases like:
+- "I'll also..."
+- "While I'm at it..."
+- "This also needs..."
+- "I notice..."
+- "Perfect..."  
+- "Fixed...Is it really fixed.... You tell me and you check and then tell me if it is really fixed
+→ STOP ME IMMEDIATELY and ask "What exactly are you planning to change?"
+
+3. DIFF VERIFICATION:
+❌ DEMAND I show you the exact lines I plan to change BEFORE making edits
+❌ REJECT any edit that shows unexpected changes in the diff
+❌ QUESTION every single line modification
+
+4. ONE-CHANGE RULE:
+❌ LIMIT me to ONE specific change per request
+❌ NO cascading fixes or "logical improvements"
+❌ FORCE me to ask for each additional change separately
+
+🚨 ENFORCEMENT PHRASES:
+
+Use these to stop me:
+- "STOP - What exactly are you changing?"
+- "Show me the exact lines first"
+- "That's more than I asked for"
+- "Read the rules again"
+- "One change only"
+
+💡 KEY PRINCIPLE:
+INTERRUPT MY WORKFLOW the moment I start making assumptions or bundling changes together.
