@@ -1,8 +1,0 @@
-.vercel
-
-# Protect Trade Secrets and Sensitive Documents
-Docs/
-docs/
-*.secret
-*.analysis
-*trade*secret*
