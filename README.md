@@ -1,6 +1,6 @@
 # 4-Wave Labs
 
-**Professional website for 4-Wave Labs - AI-powered matching technology**
+**Website for 4-Wave Labs - AI-powered matching technology**
 
 🌐 **Live Site:** [www.4wavelabs.com](https://www.4wavelabs.com)
 
@@ -33,7 +33,7 @@
 
 ## Contact
 
-- **Email:** watsy@4wavelabs.com
+- **Email:** watsy at 4wavelabs.com
 - **Website:** [4wavelabs.com](https://www.4wavelabs.com)
 - **Discord:** [Join our community](https://discord.gg/BNJKjJMg)
 
