@@ -1,6 +1,6 @@
 # 4-Wave Labs
 
-**Website for 4-Wave Labs - AI-powered matching technology**
+**Website for 4-Wave Labs**
 
 🌐 **Live Site:** [www.4wavelabs.com](https://www.4wavelabs.com)
 
